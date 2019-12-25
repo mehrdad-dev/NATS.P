@@ -1,18 +1,18 @@
-package nats
+package event
 
 import (
 	"log"
 	"natsp/config"
 
-	"github.com/nats-io/nats.go"
-	nats "github.com/nats-io/nats.go/encoders/protobuf"
+	nats "github.com/nats-io/nats.go"
+	nat "github.com/nats-io/nats.go/encoders/protobuf"
 )
 
 //NewLocalConnection
-func NewLocalConnection(config config.Configuration) *nats.EncodedConn {
+func NewLocalConnection() *nats.EncodedConn {
 
 	//connect to nats
-	nc, err := nats.Connect(config.Nats.URL)
+	nc, err := nats.Connect(nats.DefaultURL)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -31,7 +31,7 @@ func NewConnection(configURL string) *nats.EncodedConn {
     if err != nil {
         log.Fatal(err)
     }
-    ec, err := nats.NewEncodedConn(nc, nats.PROTOBUF_ENCODER)
+    ec, err := nats.NewEncodedConn(nc, nat.PROTOBUF_ENCODER)
     if err != nil {
         log.Fatal(err)
     }

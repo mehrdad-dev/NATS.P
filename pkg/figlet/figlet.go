@@ -1,4 +1,4 @@
-package main
+package figlet
 
 import (
 	"github.com/mbndr/figlet4go"
@@ -26,5 +26,5 @@ func ShowFiglet(text string) {
 		log.Fatal(err)
 	}
 	
-	fmt.Println(renderStr)
+	fmt.Println(renderStr)	
 }
