@@ -26,5 +26,5 @@ func ShowFiglet(text string) {
 		log.Fatal(err)
 	}
 	
-	fmt.Println(renderStr)	
+	fmt.Println(renderStr,"A Simple Command Prompt For Nats\n\n")
 }
